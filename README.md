@@ -221,6 +221,7 @@ public class Patrol : MonoBehaviour {
 		}
 	}
 
+	//与玩家撞击
 	void OnCollisionStay(Collision other){
 		if (other.gameObject.tag == "Player") {
 			if (hitPlayerEvent != null) {
@@ -229,16 +230,16 @@ public class Patrol : MonoBehaviour {
 		}
 	}
 
+	//玩家进入追杀范围
 	void OnTriggerStay(Collider other){
 		if (other.gameObject.tag == "Player") {
-			Debug.Log (1);
 			patroling = false;
 		}
 	}
 
+	//玩家离开追杀范围
 	void OnTriggerExit(Collider other){
 		if (other.gameObject.tag == "Player") {
-			Debug.Log (2);
 			patroling = true;
 		}
 	}
