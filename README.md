@@ -13,3 +13,31 @@
 ![游戏失败](https://raw.githubusercontent.com/MapleLai/Homework6/master/Screenshot/%E6%B8%B8%E6%88%8F%E5%A4%B1%E8%B4%A5.jpg)
 + 游戏获胜
 ![游戏获胜](https://raw.githubusercontent.com/MapleLai/Homework6/master/Screenshot/%E6%B8%B8%E6%88%8F%E8%8E%B7%E8%83%9C.jpg)
+
+## 游戏代码
++ SSDirector  
+
+游戏的导演类，由于此次游戏场景只有一个，所以导演类要实现的代码并不多。
+<pre>
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SSDirector : MonoBehaviour {
+	private static SSDirector _instance;
+	private FirstSceneController firstSceneController;
+
+	public static SSDirector getInstance() {
+		return _instance;
+	}
+
+	void Awake(){
+		_instance = this;
+	}
+
+	void Start () {
+		firstSceneController = FirstSceneController.getInstance ();
+	}
+}
+
+</pre>
